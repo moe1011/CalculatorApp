@@ -1,6 +1,7 @@
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    Menu
 } = require("electron");
 const isDevelopment = process.env.NODE_ENV === "development";
 let initialLoad = true;
@@ -9,7 +10,7 @@ function createWindow() {
     // Create a new window
     const window = new BrowserWindow({
         width: 400,
-        height: 670,
+        height: 640,
         show: false,
         resizable: false,
         titleBarStyle: "hidden",
@@ -17,6 +18,9 @@ function createWindow() {
         hasShadow: false,
         fullscreen: false,
     });
+
+    // Menu.setApplicationMenu(false)
+    window.setMenuBarVisibility(false);
 
     // Event listeners on the window
     window.webContents.on("did-finish-load", () => {

@@ -6,13 +6,10 @@ import { Input } from "./components/input";
 
 export function App() {
   const [displayValues, setDisplayValues] = useState("");
-  // const [calcValues, setCalcValues] = useState();
+  const [savedCalc, setSavedCalc] = useState("");
   const [isCalc, setIsCalc] = useState(false);
 
   useEffect(() => {
-    // if(displayValues == undefined || displayValues == null){
-    //   return;
-    // }
     if (isCalc) {
       try {
         setIsCalc(false);
@@ -22,10 +19,6 @@ export function App() {
         if (calcValue == "" || typeof calcValue != "string") {
           return;
         }
-        // if(isNaN(parseInt(calcValue))){
-        //   console.log("returning")
-        //   return;
-        // }
 
         if (calcValue.includes("x")) {
           calcValue = calcValue.replace(/x/g, "*");
@@ -33,9 +26,13 @@ export function App() {
         if (calcValue.includes("÷")) {
           calcValue = calcValue.replace(/÷/g, "/");
         }
-        console.log(calcValue);
 
-        setDisplayValues(eval(calcValue));
+        // Calculation
+        let sum = eval(calcValue);
+        sum = sum.toString();
+
+        setSavedCalc(displayValues + " = " + sum);
+        setDisplayValues(sum);
       } catch (e) {
         // console.error(e);
       }
@@ -45,7 +42,6 @@ export function App() {
   return (
     <div className="App bg-blue-500/90 h-screen">
       <div className="flex Draggable bg-blue-700/90 w-screen h-8"></div>
-      Here: {displayValues}
       <div className="text-white text-5xl mb-5">
         <Display displayValues={displayValues} />
         <Input
