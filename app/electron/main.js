@@ -8,9 +8,14 @@ let initialLoad = true;
 function createWindow() {
     // Create a new window
     const window = new BrowserWindow({
-        width: 800,
-        height: 600,
-        show: false
+        width: 400,
+        height: 670,
+        show: false,
+        resizable: false,
+        titleBarStyle: "hidden",
+        transparent: true,
+        hasShadow: false,
+        fullscreen: false,
     });
 
     // Event listeners on the window
