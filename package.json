@@ -34,8 +34,8 @@
     "dist-windows": "npm run preprod && electron-builder --windows"
   },
   "build": {
-    "productName": "MyProductName",
-    "appId": "com.mycompany|electron.myproductname",
+    "productName": "CalculatorApp",
+    "appId": "com.mohammedabdulla|electron.calculatorapp",
     "directories": {
       "buildResources": "resources"
     },
