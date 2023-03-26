@@ -36,7 +36,7 @@ export function CalcButton({value, theme, long, displayValues, setDisplayValues,
 
 
     return(
-        <button className={(long ? "w-[12rem]" : "w-[6rem]") + " h-[6rem] text-4xl border border-black outline-none " + userTheme}
-        onClick={handleClick} >{value}</button>
+        <p className={(long ? "w-[12rem]" : "w-[6rem]") + " flex h-[6rem] text-4xl border border-black outline-none items-center justify-center cursor-pointer " + userTheme}
+        onClick={handleClick} tabIndex="-1" aria-readonly >{value}</p>
     );
 }

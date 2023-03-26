@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "./app.css";
 import { Display } from "./components/display";
 import { Input } from "./components/input";
+import { Tabs } from "./components/tabs";
+import { evaluate } from "mathjs";
 
 export function App() {
   const [displayValues, setDisplayValues] = useState("");
@@ -28,10 +30,10 @@ export function App() {
         }
 
         // Calculation
-        let sum = eval(calcValue);
+        let sum = evaluate(calcValue);
         sum = sum.toString();
 
-        setSavedCalc(displayValues + " = " + sum);
+        setSavedCalc(prev =>(prev + displayValues + " = " + sum + "\n"));
         setDisplayValues(sum);
       } catch (e) {
         // console.error(e);
@@ -43,6 +45,7 @@ export function App() {
     <div className="App bg-blue-500/90 h-screen">
       <div className="flex Draggable bg-blue-700/90 w-screen h-8"></div>
       <div className="text-white text-5xl mb-5">
+        <Tabs savedCalc={savedCalc} setSavedCalc={setSavedCalc} />
         <Display displayValues={displayValues} />
         <Input
           displayValues={displayValues}

@@ -10,9 +10,9 @@ function createWindow() {
     // Create a new window
     const window = new BrowserWindow({
         width: 400,
-        height: 640,
+        height: 660,
         show: false,
-        resizable: false,
+        resizable: true,
         titleBarStyle: "hidden",
         transparent: true,
         hasShadow: false,
