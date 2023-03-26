@@ -32,7 +32,7 @@ export function Tabs({ savedCalc, setSavedCalc }) {
         <span className="bg-blue-400 rounded-l-md min-w-[3rem] max-w-sm px-2 font-bold inline-block text-center">
           {title}
         </span>
-        <span className="bg-blue-500 px-2 text-center rounded-r-md inline-block min-w-[15rem] max-w-sm">
+        <span className="bg-blue-500 px-2 rounded-r-md inline-block min-w-[15rem] max-w-sm">
           {disc}
         </span>
       </p>
@@ -57,7 +57,7 @@ export function Tabs({ savedCalc, setSavedCalc }) {
               {loadHelp("÷", "Division Operator")}
               {loadHelp("x", "Multiplication Operator")}
               {loadHelp("-", "Subtraction Operator")}
-              {loadHelp("+", "Addition Operators")}
+              {loadHelp("+", "Addition Operator")}
               {loadHelp("=", "Sum Operator")}
               {loadHelp("Save", "Saves all calculations to a text file")}
               {loadHelp("Clear Save", "Clears all previous calculations")}
