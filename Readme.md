@@ -1,5 +1,5 @@
 # Calculator App
-![Calculator App Icon](../resources/icon.ico)
+![Calculator App Icon](./resources/icon.ico)
 
 #### [`Download`](https://www.dropbox.com/sh/783xt9vd9zvz1cg/AAB0QByt_sPKuKT--00mkhOya?dl=0) the setup file here
 
