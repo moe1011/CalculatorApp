@@ -22,6 +22,7 @@ Clear Save | Clears all previous calculations
 ```
 
 ### Developer Contact
+> Name - Mohammed Abdulla
+> Email - moe.a1011@gmail.com
 
-Name - Mohammed Abdulla
-Email - moe.a1011@gmail.com
+
