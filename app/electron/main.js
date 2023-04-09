@@ -13,8 +13,6 @@ function createWindow() {
         height: 660,
         show: false,
         resizable: true,
-        titleBarStyle: "hidden",
-        transparent: true,
         hasShadow: false,
         fullscreen: false,
     });

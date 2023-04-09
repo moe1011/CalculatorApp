@@ -2,6 +2,14 @@
     -webkit-app-region: drag;
 }
 
-.Blur-bg{
-    
+.CursorPulse{
+    opacity: 100;
+    animation: cursor-pulse 1.5s steps(2) infinite
+
+}
+
+@keyframes cursor-pulse {
+    0%{
+        opacity: 0;
+    }
 }

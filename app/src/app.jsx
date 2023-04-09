@@ -35,15 +35,21 @@ export function App() {
 
         setSavedCalc(prev =>(prev + displayValues + " = " + sum + "\n"));
         setDisplayValues(sum);
+
+
       } catch (e) {
         // console.error(e);
       }
+
+      const elem = document.getElementById("display");
+      elem.scrollLeft = 0;
+
     }
   }, [isCalc]);
 
   return (
-    <div className="App bg-blue-500/90 h-screen">
-      <div className="flex Draggable bg-blue-700/90 w-screen h-8"></div>
+    <div className="App bg-blue-500/90 h-screen select-none">
+      <div className="flex Draggable bg-blue-700/90 w-screen"></div>
       <div className="text-white text-5xl mb-5">
         <Tabs savedCalc={savedCalc} setSavedCalc={setSavedCalc} />
         <Display displayValues={displayValues} />

@@ -23,29 +23,37 @@ export function Input({displayValues, setDisplayValues, setIsCalc}){
     }
 }
 
+function handleHotkeyNoRepeat(key) {
+  return (e) => {
+    if (!e.repeat) {
+      handleHotkey(key);
+    }
+  };
+}
 
 
 //* Hotkeys
-useHotkeys('0', () => handleHotkey("0"))
-useHotkeys('1', () => handleHotkey("1"))
-useHotkeys('2', () => handleHotkey("2"))
-useHotkeys('3', () => handleHotkey("3"))
-useHotkeys('4', () => handleHotkey("4"))
-useHotkeys('5', () => handleHotkey("5"))
-useHotkeys('6', () => handleHotkey("6"))
-useHotkeys('7', () => handleHotkey("7"))
-useHotkeys('8', () => handleHotkey("8"))
-useHotkeys('9', () => handleHotkey("9"))
-useHotkeys('.', () => handleHotkey("."))
-useHotkeys(['equal', 'enter'], () => handleHotkey("="))
-useHotkeys('shift+equal', () => handleHotkey("+"))
-useHotkeys('minus', () => handleHotkey("-"))
-useHotkeys('shift+8', () => handleHotkey("x"))
-useHotkeys('/', () => handleHotkey("÷"))
-useHotkeys('esc', () => handleHotkey("esc"))
-useHotkeys('shift+9', () => handleHotkey("("))
-useHotkeys('shift+0', () => handleHotkey(")"))
-useHotkeys("backspace", () => handleHotkey("backspace"))
+useHotkeys('0', handleHotkeyNoRepeat("0"))
+useHotkeys('1', handleHotkeyNoRepeat("1"))
+useHotkeys('2', handleHotkeyNoRepeat("2"))
+useHotkeys('3', handleHotkeyNoRepeat("3"))
+useHotkeys('4', handleHotkeyNoRepeat("4"))
+useHotkeys('5', handleHotkeyNoRepeat("5"))
+useHotkeys('6', handleHotkeyNoRepeat("6"))
+useHotkeys('7', handleHotkeyNoRepeat("7"))
+useHotkeys('8', handleHotkeyNoRepeat("8"))
+useHotkeys('9', handleHotkeyNoRepeat("9"))
+useHotkeys('.', handleHotkeyNoRepeat("."))
+useHotkeys(['equal', 'enter'], handleHotkeyNoRepeat("="))
+useHotkeys('shift+equal', handleHotkeyNoRepeat("+"))
+useHotkeys('minus', handleHotkeyNoRepeat("-"))
+useHotkeys('shift+8', handleHotkeyNoRepeat("x"))
+useHotkeys('/', handleHotkeyNoRepeat("÷"))
+useHotkeys('esc', handleHotkeyNoRepeat("esc"))
+useHotkeys('shift+9', handleHotkeyNoRepeat("("))
+useHotkeys('shift+0', handleHotkeyNoRepeat(")"))
+useHotkeys("backspace", handleHotkeyNoRepeat("backspace"))
+
 
     return(
       <>
@@ -83,6 +91,6 @@ useHotkeys("backspace", () => handleHotkey("backspace"))
           <CalcButton value={"="} theme={"operation"} displayValues={displayValues} setDisplayValues={setDisplayValues} setIsCalc={setIsCalc}/>
           </div>
 
-          </>
+        </>
     );
 }
